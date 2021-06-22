@@ -9,16 +9,18 @@ public class Program {
 	public static void main(String[] args) {		
 		
 		Scanner sc = new Scanner(System.in);
-		Product pd = new Product();
+		
 		
 		System.out.println("Enter product data:");
 		
 		System.out.print("Name: ");
-		pd.name=sc.next();	
+		String name=sc.next();	
 		System.out.print("Price: ");
-		pd.price=sc.nextDouble();
+		double price=sc.nextDouble();
 		System.out.print("Quantity: ");
-		pd.quantity=sc.nextInt();
+		int quantity=sc.nextInt();
+		
+		Product pd = new Product(name, price , quantity);
 		
 		System.out.println("\nProduct data: "+ pd.toString());
 		
