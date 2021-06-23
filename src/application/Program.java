@@ -25,13 +25,17 @@ public class Program {
 		System.out.println("\nProduct data: "+ pd.toString());
 		
 		System.out.print("\nEnter the number of products to be added in stock: ");
-		int Q = sc.nextInt();
-		pd.addProduct(Q);
+		
+		quantity = sc.nextInt();
+		pd.addProduct(quantity);
+		
 		System.out.println("\nUpdated data: "+ pd.toString());
 		
 		System.out.print("\nEnter the number of products to be removed from stock: ");
-		Q = sc.nextInt();
-		pd.removeProduct(Q);
+		
+		quantity = sc.nextInt();
+		pd.removeProduct(quantity);
+		
 		System.out.println("\nUpdated data: "+ pd.toString());
 		
 		sc.close();
