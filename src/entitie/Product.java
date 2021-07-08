@@ -20,7 +20,7 @@ public class Product {
 		this.name = name;
 		this.price = price;		
 	}
-	
+	//encapsulamento
 	public String getName() {
 		return name;
 	}
