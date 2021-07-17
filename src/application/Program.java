@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -15,10 +17,10 @@ public class Program {
 		System.out.print("how many products do you want to register?");
 		int n = sc.nextInt();
 		
-		Product[] vect = new Product[n];
+		List<Product> list = new ArrayList<>();
 		int quantity;
 		
-		for(int i=0; i < vect.length; i++) {		
+		for(int i=0; i < n; i++) {		
 		System.out.println("\nEnter product data:");
 		
 		System.out.print("Name: ");
@@ -28,30 +30,33 @@ public class Program {
 		System.out.print("Quantity: ");
 		quantity=sc.nextInt();
 		
-		vect[i] = new Product(name, price , quantity);
+		Product pdt = new Product(name, price , quantity);
 		
+		list.add(pdt);
 		}		
 		
-		for (int i=0; i < vect.length; i++) {
+		for (Product pdt : list) {
 		System.out.println("_______________________________________________________________________");
-		System.out.println("\nProduct data: "+ vect[i].toString());
+		System.out.println("\nProduct data: "+ pdt);
 		
 		System.out.print("\nEnter the number of products to be added in stock: ");
 		
 		quantity = sc.nextInt();
-		vect[i].addProduct(quantity);
+		pdt.addProduct(quantity);
 		
-		System.out.println("\nUpdated data: "+ vect[i].toString());
+		System.out.println("\nUpdated data: "+ pdt);
 		
 		System.out.print("\nEnter the number of products to be removed from stock: ");
 		
 		quantity = sc.nextInt();
-		vect[i].removeProduct(quantity);
+		pdt.removeProduct(quantity);
 		
-		System.out.println("\nUpdated data: "+ vect[i].toString());
+		System.out.println("\nUpdated data: "+ pdt);
 		}
 		
 		sc.close();
 	}
+	
+	
 
 }
